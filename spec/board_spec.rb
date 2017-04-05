@@ -10,12 +10,14 @@ describe Board do
     subject(:move_piece) { board.move_piece(piece, from_point, to_point) }
 
     before do
-      allow(Move).to receive(:new).with(board, piece, from_point, to_point).and_return(move)
+      allow(Move)
+        .to receive(:new).with(board, piece, from_point, to_point).and_return(move)
     end
 
     context 'valid move' do
       before do
         allow(move).to receive(:valid?).and_return(true)
+        expect(move).to receive(:execute)
       end
 
       it { is_expected.to eq true }
@@ -24,6 +26,7 @@ describe Board do
     context 'invalid move' do
       before do
         allow(move).to receive(:valid?).and_return(false)
+        expect(move).not_to receive(:execute)
       end
 
       it { is_expected.to eq false }

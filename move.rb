@@ -11,6 +11,9 @@ class Move
     true
   end
 
+  def execute
+  end
+
   private
 
   attr_accessor :board, :piece, :from_point, :to_point
