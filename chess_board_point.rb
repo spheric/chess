@@ -1,7 +1,8 @@
-class Point
+class ChessBoardPoint
   attr_reader :x, :y
 
   def initialize(x, y)
+    raise InvalidArgumentError if x < 0 || x > 7 || y < 0 || y > 7
     self.x = x
     self.y = y
   end

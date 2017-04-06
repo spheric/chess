@@ -20,10 +20,17 @@
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..')
 
 require 'board'
+require 'square'
 require 'piece'
 require 'pawn'
-require 'point'
+require 'king'
+require 'queen'
+require 'knight'
+require 'rook'
+require 'bishop'
+require 'chess_board_point'
 require 'move'
+require 'pry'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
