@@ -30,6 +30,7 @@ require 'rook'
 require 'bishop'
 require 'chess_board_point'
 require 'move'
+require 'pawn_move'
 require 'pry'
 
 RSpec.configure do |config|

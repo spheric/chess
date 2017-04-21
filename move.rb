@@ -17,6 +17,16 @@ class Move
     from_square.remove_piece
   end
 
+  protected
+
+  def move_piece
+    board.square_at(from_point).piece
+  end
+
+  def take_piece
+    board.square_at(to_point).piece
+  end
+
   private
 
   attr_accessor :board, :from_point, :to_point

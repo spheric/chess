@@ -5,7 +5,9 @@ class Board
   end
 
   def move_piece(from_point, to_point)
-    move = Move.new(self, from_point, to_point)
+    piece = square_at(from_point).piece
+    return false if piece.nil?
+    move = piece.move_class.new(self, from_point, to_point)
     move_valid = move.valid?
     move.execute if move_valid
     move_valid
